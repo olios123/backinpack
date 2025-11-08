@@ -1,5 +1,79 @@
 name: BackInPack
-version: '4.0'
-main: me.olios.backinpack.Main
-api-version: '1.21'
+version: 4.0-BETA
+api-version: 1.13
+prefix: BackInPack
 authors: [ olios ]
+description: Plugin introduces a portable backpack for players
+
+softdepend: [PlaceholderAPI, Vault]
+
+main: me.olios.backinpack.Main
+database: true
+
+commands:
+  backpack:
+    description: Opens the backpack menu
+    aliases:
+      - b
+      - bck
+      - backpacks
+    usage: /backpack [backpack] | /backpack <player> [backpack]
+  backpack-name-edit:
+    description: Edit backpack name
+    usage: /backpack-name-edit <old backpack name> <new backpack name>
+  backpack-set-size:
+    description: Set size for backpack
+    usage: /backpack-set-size <player/all> <backpack/all> <size>
+  backpack-give:
+    description: Create backpack and/or give it as item
+    usage: /backpack-give <player> <backpack> [true/false - give as item]
+  backpack-userinfo:
+    description: Player information
+    usage: /backpack-userinfo <player>
+  backinpack:
+    description: Show help for this plugin / reload plugin with "reload" argument / synchronize local data with database with "sync" argument
+    aliases:
+      - bip
+    usage: /backinpack [help/commands/permissions/placeholders/reload/sync/about]
+
+permissions:
+  backinpack.*:
+    description: All permissions for BackInPack plugin
+    default: op
+    children:
+      backinpack.admin: true
+      backinpack.userinfo: true
+      backinpack.setsize: true
+      backinpack.reload: true
+      backinpack.give: true
+      backinpack.open: true
+      backinpack.backpack-save: true
+      backinpack.sync: true
+      backinpack.backpack-access: true
+  backinpack.admin:
+    default: op
+    description: Access to admin help
+  backinpack.userinfo:
+    default: op
+    description: Allows you to check the maximum size of a backpack with another player
+  backinpack.setsize:
+    default: op
+    description: Changes the maximum size of a backpack for a given player
+  bacinpack.reload:
+    default: op
+    description: Reloads plugin configuration
+  backinpack.give:
+    default: op
+    description: Adds a backpack to the player
+  backinpack.open:
+    default: op
+    description: Opening other players' backpacks
+  backinpack.backpack-save:
+    default: op
+    description: Keeps items in backpacks after death
+  backinpack.sync:
+    default: op
+    description: Access to the command synchronizing data in the database
+  backinpack.backpack-access:
+    default: op
+    description: This permission is required to open backpacks (if the configuration requires it)

@@ -6,7 +6,6 @@
 
 package me.olios.backinpack;
 
-import com.jeff_media.jefflib.JeffLib;
 import me.olios.backinpack.API.PAPIExpansion;
 import me.olios.backinpack.Events.PlayerCrafting;
 import me.olios.backinpack.Events.PlayerDeath;
@@ -189,6 +188,33 @@ public final class Main extends JavaPlugin implements Listener {
                     "&6 | _ )&9_ _&6| _ \\&r | &6Version: &a" + Data.pluginVersion + "\n" +
                     "&6 | _ \\&9| |&6|  _/&r | &6SSID: &a" + Data.SSID + "\n" +
                     "&6 |___/&9___&6|_|  &r | &6Server: &a" + Bukkit.getServer().getBukkitVersion() + "\n" + "&6              ";
+
+
+            // Checking for BETA version of a plugin
+            if (Data.pluginVersion.contains("BETA"))
+            {
+                // Send message to OP-s
+                for (Player player : Bukkit.getServer().getOnlinePlayers())
+                {
+                    // Check if OP
+                    if (player.isOp())
+                    {
+                        player.sendMessage(StringReplace.string("&6BackInPack - WARNING\n" +
+                                "&6You are using the BETA version of the BackInPack plugin, " +
+                                "&6be sensitive to errors and possible incorrect functioning of the plugin. " +
+                                "&6If such a situation occurs, it is recommended to use the latest version" +
+                                "&6of the plugin without the \"BETA\" tag."));
+                    }
+                }
+
+                // Send message to console
+                Main.log(ANSI_GOLD + "BackInPack - WARNING");
+                Main.log(ANSI_GOLD + "You are using the BETA version of the BackInPack plugin,");
+                Main.log(ANSI_GOLD + "be sensitive to errors and possible incorrect functioning of the plugin.");
+                Main.log(ANSI_GOLD + "If such a situation occurs, it is recommended to use the latest version");
+                Main.log(ANSI_GOLD + "of the plugin without the \"BETA\" tag.");
+            }
+
 
             // Register events
             registerEvents(this);

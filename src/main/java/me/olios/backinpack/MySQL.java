@@ -1,12 +1,10 @@
 package me.olios.backinpack;
 
-import me.olios.backinpack.Managers.ConfigManager;
 import me.olios.backinpack.Managers.FilesManager;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.sql.*;
-import java.util.Properties;
 
 public class MySQL {
 

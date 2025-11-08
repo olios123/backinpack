@@ -2,7 +2,6 @@ package me.olios.backinpack;
 
 import org.bukkit.plugin.Plugin;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -13,8 +12,8 @@ public class Data {
     public static int resourceId = 102384;
     public static String resourceURL = "https://www.spigotmc.org/resources/backinpack.102384/";
     public static String resourceDocs = "https://www.spigotmc.org/resources/backinpack.102384/field?field=documentation";
-    public static String version = "3.0";
-    public static String pluginVersion = "3.0";
+    public static String version = "4.0-BETA";
+    public static String pluginVersion = "4.0-BETA";
     public static String discord = "https://discord.gg/kE6eptDu3W";
     public static boolean canUpdate = false;
     public static String SSID;
