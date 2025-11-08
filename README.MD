@@ -56,7 +56,10 @@ In the `pom.xml` file you need to provide the path where your `.jar` file will b
 
 You're all set to receive your `.jar` file. Running this command will compile the project into a `.jar` file that can be used on the server.
 
-> package -f pom.xml
+```
+package -f pom.xml
+```
+ 
 
 ## Support
 
