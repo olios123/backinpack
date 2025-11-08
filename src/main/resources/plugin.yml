@@ -1,0 +1,5 @@
+name: BackInPack
+version: '4.0'
+main: me.olios.backinpack.Main
+api-version: '1.21'
+authors: [ olios ]
